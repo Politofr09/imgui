@@ -12,8 +12,10 @@ project "ImGui"
 		"backends",
 		
 		-- Necessary for vulkan
-		"%{VULKAN_SDK}/Include/"
+		"%{VULKAN_SDK}/Include/",
 		-- "%{LibraryDir.Vulkan}"
+
+		"%{IncludeDir.GLFW}"
 	}
 
 	files
@@ -32,6 +34,7 @@ project "ImGui"
 
 		-- Selected backend: Vulkan
 		"backends/imgui_impl_glfw.h",
+		"backends/imgui_impl_glfw.cpp",
 		"backends/imgui_impl_vulkan.h",
 		"backends/imgui_impl_vulkan.cpp"
 	}
